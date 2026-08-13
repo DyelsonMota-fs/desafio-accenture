@@ -36,7 +36,7 @@ public class VehicleService {
             vehicle.setDealer(
                     dealerRepository.findById(request.dealerId())
                             .orElseThrow(() ->
-                                    new ResourceNotFoundException("Veículo não encontrado")
+                                    new ResourceNotFoundException("Concessionária não encontrada")
                             )
             );
         }
