@@ -105,4 +105,18 @@ public class VehicleService {
 
         vehicleRepository.deleteById(id);
     }
+
+    public List<VehicleResponse> findByDealerId(Long dealerId) {
+
+        if (!dealerRepository.existsById(dealerId)) {
+            throw new ResourceNotFoundException(
+                    "Concessionária não encontrada"
+            );
+        }
+
+        return vehicleRepository.findByDealerId(dealerId)
+                .stream()
+                .map(this::toResponse)
+                .toList();
+    }
 }

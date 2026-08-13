@@ -2,7 +2,10 @@ package br.com.desafio.backend.controller;
 
 import br.com.desafio.backend.dto.DealerRequest;
 import br.com.desafio.backend.dto.DealerResponse;
+import br.com.desafio.backend.dto.VehicleResponse;
+import br.com.desafio.backend.entity.Vehicle;
 import br.com.desafio.backend.service.DealerService;
+import br.com.desafio.backend.service.VehicleService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -12,9 +15,11 @@ import java.util.List;
 public class DealerController {
 
     private final DealerService dealerService;
+    private final VehicleService vehicleService;
 
-    public DealerController(DealerService dealerService) {
+    public DealerController(DealerService dealerService, VehicleService vehiclService) {
         this.dealerService = dealerService;
+        this.vehicleService = vehiclService;
     }
 
     @GetMapping
@@ -43,5 +48,10 @@ public class DealerController {
     @DeleteMapping("/{id}")
     public void delete(@PathVariable Long id) {
         dealerService.delete(id);
+    }
+
+    @GetMapping("/{id}/vehicles")
+    public List<VehicleResponse> findVehicles(@PathVariable Long id) {
+        return vehicleService.findByDealerId(id);
     }
 }
