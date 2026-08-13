@@ -3,6 +3,7 @@ package br.com.desafio.backend.service;
 import br.com.desafio.backend.dto.DealerRequest;
 import br.com.desafio.backend.dto.DealerResponse;
 import br.com.desafio.backend.entity.Dealer;
+import br.com.desafio.backend.exception.ResourceNotFoundException;
 import br.com.desafio.backend.repository.DealerRepository;
 import org.springframework.stereotype.Service;
 
@@ -26,7 +27,7 @@ public class DealerService {
 
     public DealerResponse findById(Long id) {
         Dealer dealer = dealerRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("Concessionária não encontrada"));
+                .orElseThrow(() -> new ResourceNotFoundException("Concessionária não encontrada"));
 
         return toResponse(dealer);
     }
@@ -57,7 +58,7 @@ public class DealerService {
 
         Dealer dealer = dealerRepository.findById(id)
                 .orElseThrow(() ->
-                        new RuntimeException("Concessionária não encontrada")
+                        new ResourceNotFoundException("Concessionária não encontrada")
                 );
 
         dealer.setRazaoSocial(request.razaoSocial());
@@ -72,7 +73,7 @@ public class DealerService {
     public void delete(Long id) {
 
         if (!dealerRepository.existsById(id)) {
-            throw new RuntimeException("Concessionária não encontrada");
+            throw new ResourceNotFoundException("Concessionária não encontrada");
         }
 
         dealerRepository.deleteById(id);

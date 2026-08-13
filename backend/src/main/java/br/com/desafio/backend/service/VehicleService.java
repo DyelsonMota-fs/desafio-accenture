@@ -4,6 +4,7 @@ package br.com.desafio.backend.service;
 import br.com.desafio.backend.dto.VehicleRequest;
 import br.com.desafio.backend.dto.VehicleResponse;
 import br.com.desafio.backend.entity.Vehicle;
+import br.com.desafio.backend.exception.ResourceNotFoundException;
 import br.com.desafio.backend.repository.DealerRepository;
 import br.com.desafio.backend.repository.VehicleRepository;
 import org.springframework.stereotype.Service;
@@ -35,7 +36,7 @@ public class VehicleService {
             vehicle.setDealer(
                     dealerRepository.findById(request.dealerId())
                             .orElseThrow(() ->
-                                    new RuntimeException("Concessionária não encontrada")
+                                    new ResourceNotFoundException("Veículo não encontrado")
                             )
             );
         }
@@ -65,7 +66,7 @@ public class VehicleService {
 
     public VehicleResponse findById(Long id) {
         Vehicle vehicle = vehicleRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("Veículo não encontrado"));
+                .orElseThrow(() -> new ResourceNotFoundException("Veículo não encontrado"));
 
         return toResponse(vehicle);
     }
@@ -73,7 +74,7 @@ public class VehicleService {
     public VehicleResponse update(Long id, VehicleRequest request) {
 
         Vehicle vehicle = vehicleRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("Veículo não encontrado"));
+                .orElseThrow(() -> new ResourceNotFoundException("Veículo não encontrado"));
 
         vehicle.setMarca(request.marca());
         vehicle.setModelo(request.modelo());
@@ -84,7 +85,7 @@ public class VehicleService {
             vehicle.setDealer(
                     dealerRepository.findById(request.dealerId())
                             .orElseThrow(() ->
-                                    new RuntimeException("Concessionária não encontrada")
+                                    new ResourceNotFoundException("Concessionária não encontrada")
                             )
             );
         } else {
@@ -99,7 +100,7 @@ public class VehicleService {
     public void delete(Long id) {
 
         if (!vehicleRepository.existsById(id)) {
-            throw new RuntimeException("Veículo não encontrado");
+            throw new ResourceNotFoundException("Veículo não encontrado");
         }
 
         vehicleRepository.deleteById(id);
