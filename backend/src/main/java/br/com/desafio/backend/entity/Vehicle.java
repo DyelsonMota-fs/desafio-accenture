@@ -21,4 +21,29 @@ public class Vehicle {
     @ManyToOne
     private Dealer dealer;
 
+
+    public Long getId() {
+        return id;
+    }
+
+    public String getMarca() {
+        return marca;
+    }
+
+    public String getModelo() {
+        return modelo;
+    }
+
+    public TipoCombustivel getTipoCombustivel() {
+        return tipoCombustivel;
+    }
+
+    public String getCor() {
+        return cor;
+    }
+
+    public Dealer getDealer() {
+        return dealer;
+    }
+
 }

@@ -17,4 +17,19 @@ public class Dealer {
     @OneToMany(mappedBy = "dealer")
     private List<Vehicle> vehicles;
 
+    public Long getId() {
+        return id;
+    }
+
+    public String getRazaoSocial() {
+        return razaoSocial;
+    }
+
+    public String getCnpj() {
+        return cnpj;
+    }
+
+    public String getEndereco() {
+        return endereco;
+    }
 }
