@@ -10,9 +10,24 @@ public class Dealer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     private String razaoSocial;
+
     private String cnpj;
-    private String endereco;
+
+    private String cep;
+
+    private String logradouro;
+
+    private String numero;
+
+    private String complemento;
+
+    private String bairro;
+
+    private String cidade;
+
+    private String estado;
 
     @OneToMany(mappedBy = "dealer")
     private List<Vehicle> vehicles;
@@ -29,9 +44,35 @@ public class Dealer {
         return cnpj;
     }
 
-    public String getEndereco() {
-        return endereco;
+    public String getCep() {
+        return cep;
     }
+
+    public String getLogradouro() {
+        return logradouro;
+    }
+
+    public String getNumero() {
+        return numero;
+    }
+
+    public String getComplemento() {
+        return complemento;
+    }
+
+    public String getBairro() {
+        return bairro;
+    }
+
+    public String getCidade() {
+        return cidade;
+    }
+
+    public String getEstado() {
+        return estado;
+    }
+
+    //
 
     public void setRazaoSocial(String razaoSocial) {
         this.razaoSocial = razaoSocial;
@@ -41,7 +82,34 @@ public class Dealer {
         this.cnpj = cnpj;
     }
 
-    public void setEndereco(String endereco) {
-        this.endereco = endereco;
+    public void setCep(String cep) {
+        this.cep = cep;
     }
+
+    public void setLogradouro(String logradouro) {
+        this.logradouro = logradouro;
+    }
+
+    public void setNumero(String numero) {
+        this.numero = numero;
+    }
+
+    public void setComplemento(String complemento) {
+        this.complemento = complemento;
+    }
+
+    public void setBairro(String bairro) {
+        this.bairro = bairro;
+    }
+
+    public void setCidade(String cidade) {
+        this.cidade = cidade;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
+    }
+
+
+
 }

@@ -4,6 +4,12 @@ public record DealerResponse(
         Long id,
         String razaoSocial,
         String cnpj,
-        String endereco
+        String cep,
+        String logradouro,
+        String numero,
+        String complemento,
+        String bairro,
+        String cidade,
+        String estado
 ) {
 }
