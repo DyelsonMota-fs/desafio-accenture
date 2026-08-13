@@ -6,6 +6,7 @@ import br.com.desafio.backend.dto.VehicleResponse;
 import br.com.desafio.backend.entity.Vehicle;
 import br.com.desafio.backend.service.DealerService;
 import br.com.desafio.backend.service.VehicleService;
+import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -33,13 +34,14 @@ public class DealerController {
     }
 
     @PostMapping
-    public DealerResponse create(@RequestBody DealerRequest request) {
+    public DealerResponse create(@Valid @RequestBody DealerRequest request) {
         return dealerService.create(request);
     }
 
     @PutMapping("/{id}")
     public DealerResponse update(
             @PathVariable Long id,
+            @Valid
             @RequestBody DealerRequest request
     ) {
         return dealerService.update(id, request);

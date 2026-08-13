@@ -3,6 +3,7 @@ package br.com.desafio.backend.controller;
 import br.com.desafio.backend.dto.VehicleRequest;
 import br.com.desafio.backend.dto.VehicleResponse;
 import br.com.desafio.backend.service.VehicleService;
+import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -28,13 +29,14 @@ public class VehicleController {
     }
 
     @PostMapping
-    public VehicleResponse create(@RequestBody VehicleRequest request) {
+    public VehicleResponse create(@Valid @RequestBody VehicleRequest request) {
         return vehicleService.create(request);
     }
 
     @PutMapping("/{id}")
     public VehicleResponse update(
             @PathVariable Long id,
+            @Valid
             @RequestBody VehicleRequest request
     ) {
         return vehicleService.update(id, request);
