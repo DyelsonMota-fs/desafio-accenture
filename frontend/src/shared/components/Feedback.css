@@ -1,0 +1,26 @@
+.feedback-card {
+  display: flex;
+  min-height: 290px;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 9px;
+  border: 1px dashed #c4c3bd;
+  border-radius: var(--radius-md);
+  padding: 42px;
+  color: var(--muted);
+  text-align: center;
+  background: rgba(255, 255, 255, 0.45);
+}
+
+.feedback-card strong {
+  color: var(--ink);
+  font-size: 17px;
+}
+
+.feedback-card span {
+  max-width: 460px;
+  margin-bottom: 10px;
+  font-size: 13px;
+  line-height: 1.55;
+}

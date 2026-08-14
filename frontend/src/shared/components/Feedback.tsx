@@ -4,6 +4,7 @@ import {
   PackageOpen,
   RefreshCw,
 } from "lucide-react";
+import "./Feedback.css";
 
 export function PageLoader({ label = "Carregando dados" }: { label?: string }) {
   return (

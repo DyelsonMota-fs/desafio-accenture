@@ -7,6 +7,7 @@ import {
   type ReactNode,
 } from "react";
 import { ToastContext, type ToastKind } from "./toast-context.ts";
+import "./ToastProvider.css";
 
 type Toast = {
   id: number;
