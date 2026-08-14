@@ -1,5 +1,6 @@
 import { X } from "lucide-react";
 import { useEffect, type ReactNode } from "react";
+import "./Modal.css";
 
 type ModalProps = {
   open: boolean;
