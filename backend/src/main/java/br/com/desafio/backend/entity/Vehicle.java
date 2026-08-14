@@ -1,7 +1,8 @@
 package br.com.desafio.backend.entity;
 
 import jakarta.persistence.*;
-import jakarta.persistence.ManyToOne;
+
+import java.math.BigDecimal;
 
 @Entity
 public class Vehicle {
@@ -11,6 +12,7 @@ public class Vehicle {
     private Long id;
 
     private String marca;
+
     private String modelo;
 
     @Enumerated(EnumType.STRING)
@@ -18,11 +20,18 @@ public class Vehicle {
 
     private String cor;
 
+    private Integer ano;
+
+    @Column(length = 17)
+    private String chassi;
+
+    @Column(precision = 12, scale = 2)
+    private BigDecimal valor;
+
     private String imagemUrl;
 
     @ManyToOne
     private Dealer dealer;
-
 
     public Long getId() {
         return id;
@@ -42,6 +51,22 @@ public class Vehicle {
 
     public String getCor() {
         return cor;
+    }
+
+    public Integer getAno() {
+        return ano;
+    }
+
+    public String getChassi() {
+        return chassi;
+    }
+
+    public BigDecimal getValor() {
+        return valor;
+    }
+
+    public String getImagemUrl() {
+        return imagemUrl;
     }
 
     public Dealer getDealer() {
@@ -64,16 +89,23 @@ public class Vehicle {
         this.cor = cor;
     }
 
-    public void setDealer(Dealer dealer) {
-        this.dealer = dealer;
+    public void setAno(Integer ano) {
+        this.ano = ano;
     }
 
-    public String getImagemUrl() {
-        return imagemUrl;
+    public void setChassi(String chassi) {
+        this.chassi = chassi;
+    }
+
+    public void setValor(BigDecimal valor) {
+        this.valor = valor;
     }
 
     public void setImagemUrl(String imagemUrl) {
         this.imagemUrl = imagemUrl;
     }
 
+    public void setDealer(Dealer dealer) {
+        this.dealer = dealer;
+    }
 }
