@@ -1,6 +1,7 @@
 import { Building2, CarFront, Menu, X } from "lucide-react";
 import { useState } from "react";
 import { NavLink, Outlet } from "react-router-dom";
+import "./AppShell.css";
 
 export function AppShell() {
   const [menuOpen, setMenuOpen] = useState(false);
