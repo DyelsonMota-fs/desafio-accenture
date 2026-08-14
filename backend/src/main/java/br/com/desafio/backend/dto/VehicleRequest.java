@@ -18,6 +18,8 @@ public record VehicleRequest(
         @NotBlank(message = "Cor é obrigatória")
         String cor,
 
+        String imagemUrl,
+
         Long dealerId
 ) {
 }

@@ -31,6 +31,7 @@ public class VehicleService {
         vehicle.setModelo(request.modelo());
         vehicle.setTipoCombustivel(request.tipoCombustivel());
         vehicle.setCor(request.cor());
+        vehicle.setImagemUrl(request.imagemUrl());
 
         if (request.dealerId() != null) {
             vehicle.setDealer(
@@ -60,6 +61,7 @@ public class VehicleService {
                 vehicle.getModelo(),
                 vehicle.getTipoCombustivel(),
                 vehicle.getCor(),
+                vehicle.getImagemUrl(),
                 vehicle.getDealer() != null ? vehicle.getDealer().getId() : null
         );
     }
@@ -80,6 +82,7 @@ public class VehicleService {
         vehicle.setModelo(request.modelo());
         vehicle.setTipoCombustivel(request.tipoCombustivel());
         vehicle.setCor(request.cor());
+        vehicle.setImagemUrl(request.imagemUrl());
 
         if (request.dealerId() != null) {
             vehicle.setDealer(

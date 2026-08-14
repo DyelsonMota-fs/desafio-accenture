@@ -8,6 +8,7 @@ public record VehicleResponse(
         String modelo,
         TipoCombustivel tipoCombustivel,
         String cor,
+        String imagemUrl,
         Long dealerId
 ) {
 }

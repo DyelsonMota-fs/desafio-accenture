@@ -18,6 +18,8 @@ public class Vehicle {
 
     private String cor;
 
+    private String imagemUrl;
+
     @ManyToOne
     private Dealer dealer;
 
@@ -64,6 +66,14 @@ public class Vehicle {
 
     public void setDealer(Dealer dealer) {
         this.dealer = dealer;
+    }
+
+    public String getImagemUrl() {
+        return imagemUrl;
+    }
+
+    public void setImagemUrl(String imagemUrl) {
+        this.imagemUrl = imagemUrl;
     }
 
 }
