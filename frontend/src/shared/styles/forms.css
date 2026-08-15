@@ -190,6 +190,11 @@
   background: #f5dfdc;
 }
 
+.confirm-icon--warning {
+  color: #8a5b10;
+  background: #f2e7ce;
+}
+
 @media (max-width: 720px) {
   .form-grid--two,
   .form-grid--three,

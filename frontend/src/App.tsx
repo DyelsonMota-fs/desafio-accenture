@@ -3,6 +3,7 @@ import { DealersPage } from "./features/dealers/DealersPage.tsx";
 import { VehiclesPage } from "./features/vehicles/VehiclesPage.tsx";
 import { AppShell } from "./shared/components/AppShell.tsx";
 import "./shared/styles/pages.css";
+import "./shared/styles/catalog.css";
 
 function App() {
   return (
