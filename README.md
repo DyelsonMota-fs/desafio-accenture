@@ -25,10 +25,6 @@ O sistema permite cadastrar, consultar, editar e excluir veículos e concession�
 
 ## Arquitetura da solução
 
-![Desenho da arquitetura da solução]
-
-## Arquitetura da solução
-
 ```mermaid
 flowchart TB
     User["Usuário<br/>Navegador"]
@@ -120,8 +116,7 @@ desafio-accenture/
 │   ├── src/features/        # Funcionalidades de veículos e concessionárias
 │   ├── src/shared/          # API, componentes e estilos compartilhados
 │   └── package.json
-├── docs/
-│   └── arquitetura.svg      # Desenho da arquitetura
+├
 └── README.md
 ```
 
