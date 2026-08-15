@@ -16,11 +16,11 @@ export function AppShell() {
             className="brand"
             to="/vehicles"
             onClick={closeMenu}
-            aria-label="Vértice Motors"
+            aria-label="Stellantis Motors"
           >
-            <span className="brand__mark">D</span>
+            <span className="brand__mark">S</span>
 
-            <span className="brand__name">DYELSON</span>
+            <span className="brand__name">STELLANTIS</span>
 
             <span className="brand__suffix">MOTORS</span>
           </NavLink>
@@ -63,7 +63,7 @@ export function AppShell() {
 
       <footer className="site-footer">
         <div className="container site-footer__inner">
-          <span>Vértice Motors</span>
+          <span>Stellantis Motors</span>
 
           <span>Inventário &amp; rede de concessionárias</span>
         </div>

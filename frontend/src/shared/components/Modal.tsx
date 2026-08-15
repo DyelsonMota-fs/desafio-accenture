@@ -58,7 +58,7 @@ export function Modal({
       >
         <header className="modal__header">
           <div>
-            <span className="eyebrow">Vértice Motors</span>
+            <span className="eyebrow">Stellantis Motors</span>
 
             <h2 id="modal-title">{title}</h2>
 
