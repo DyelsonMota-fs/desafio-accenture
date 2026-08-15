@@ -18,9 +18,9 @@ export function AppShell() {
             onClick={closeMenu}
             aria-label="Vértice Motors"
           >
-            <span className="brand__mark">V</span>
+            <span className="brand__mark">D</span>
 
-            <span className="brand__name">VÉRTICE</span>
+            <span className="brand__name">DYELSON</span>
 
             <span className="brand__suffix">MOTORS</span>
           </NavLink>

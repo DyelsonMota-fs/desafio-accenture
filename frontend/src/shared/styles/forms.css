@@ -163,6 +163,33 @@
   padding-top: 22px;
 }
 
+.confirm-content {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.confirm-content > p {
+  margin: 0;
+  color: #4f4f4b;
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+.confirm-content > p strong {
+  color: var(--ink);
+}
+
+.confirm-icon {
+  display: grid;
+  width: 52px;
+  height: 52px;
+  place-items: center;
+  border-radius: 50%;
+  color: var(--danger);
+  background: #f5dfdc;
+}
+
 @media (max-width: 720px) {
   .form-grid--two,
   .form-grid--three,
